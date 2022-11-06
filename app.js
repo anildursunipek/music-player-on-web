@@ -63,7 +63,7 @@ const calculateTime = (totalSecond) =>{
 }
 
 audio.addEventListener("loadedmetadata",()=>{
-    progressBar.max = calculateTime(audio.duration);
+    progressBar.max = Math.floor(audio.duration);
     duration.textContent = calculateTime(audio.duration);
 })
 
@@ -72,6 +72,9 @@ audio.addEventListener("timeupdate",() => {
     currentTime.textContent = calculateTime(audio.currentTime);
 })
 
+progressBar.addEventListener("input",() =>{
+    audio.currentTime = progressBar.value; 
+})
 
 
 
