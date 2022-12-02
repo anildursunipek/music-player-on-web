@@ -1,33 +1,18 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 .container{
-    width: 350px;
-    border: 1px solid #838383;
-    border-radius: 10px;
-    margin: auto;
+    width: 600px;
 }
-.music-controls{
+
+.progress-bar{
+    width: 100%;
+}
+.times, .card-footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.music-controls i{
-    font-size: 25px;
-    color: crimson;
-    margin-right: 20px;
-    cursor: pointer;
-}
-#music.image{
-    width: 100%;
-}
-.progress{
-    width: 100%;
-    margin-bottom: 10px;
-}
-.progress .times{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.progress .progress-bar{
-    width: 100%;
-    margin-bottom: 5px;
 }

@@ -8,9 +8,9 @@ const play = document.querySelector(".music-controls #play");
 const next = document.querySelector(".music-controls #next");
 const currentTime = document.querySelector(".current-time");
 const duration = document.querySelector(".duration");
-const progressBar = document.querySelector(".progress-bar");
-const volumeSymbol = document.querySelector(".fa-volume-high");
-const volumeBar = document.querySelector("#volume-bar");
+const progressBar = document.querySelector("#progress-bar");
+const volumeSymbol = document.querySelector(".volume .fa-volume-high");
+const volumeBar = document.querySelector(".volume #volume-bar");
 const player = new MusicPlayer(musicList);
 
 window.addEventListener("load",() => {
@@ -33,13 +33,13 @@ play.addEventListener("click",() => {
 
 function playMusic(){
     container.classList.add("playing");
-    play.classList = "fa-solid fa-pause";
+    play.querySelector("i").classList = "fa-solid fa-pause";
     audio.play();
 }
 
 function stopMusic(){
     container.classList.remove("playing");
-    play.classList = "fa-solid fa-play";
+    play.querySelector("i").classList = "fa-solid fa-play";
     audio.pause();
 }
 
@@ -88,7 +88,7 @@ volumeSymbol.addEventListener("click", () => {
         audio.muted = false;
         volumeSymbol.classList = "fa-solid fa-volume-high";
         volumeState = "unmuted"
-    }
+    }   
 })
 
 volumeBar.addEventListener("input", (e) =>{
