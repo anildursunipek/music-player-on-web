@@ -7,13 +7,12 @@
 .music-controls{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .music-controls i{
-    font-size: 30px;
+    font-size: 25px;
     color: crimson;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-right: 20px;
     cursor: pointer;
 }
 #music.image{

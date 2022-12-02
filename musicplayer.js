@@ -20,7 +20,7 @@ class MusicPlayer{
         if(this.index != 0){
             this.index--;
         }else{
-            this.index = 2;
+            this.index = this.musicList.length - 1;
         }
     }
 }

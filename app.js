@@ -9,6 +9,8 @@ const next = document.querySelector(".music-controls #next");
 const currentTime = document.querySelector(".current-time");
 const duration = document.querySelector(".duration");
 const progressBar = document.querySelector(".progress-bar");
+const volumeSymbol = document.querySelector(".fa-volume-high");
+const volumeBar = document.querySelector("#volume-bar");
 const player = new MusicPlayer(musicList);
 
 window.addEventListener("load",() => {
@@ -75,6 +77,34 @@ audio.addEventListener("timeupdate",() => {
 progressBar.addEventListener("input",() =>{
     audio.currentTime = progressBar.value; 
 })
+
+volumeState = "unmuted";
+volumeSymbol.addEventListener("click", () => {
+    if(volumeState == "unmuted"){
+        audio.muted = true;
+        volumeSymbol.classList = "fa-solid fa-volume-xmark";
+        volumeState = "muted";
+    } else {
+        audio.muted = false;
+        volumeSymbol.classList = "fa-solid fa-volume-high";
+        volumeState = "unmuted"
+    }
+})
+
+volumeBar.addEventListener("input", (e) =>{
+    const value = e.target.value;
+    audio.volume = value / 100;
+    if(e.target.value == 0){
+        audio.muted = true;
+        volumeSymbol.classList = "fa-solid fa-volume-xmark";
+        volumeState = "muted";
+    } else{
+        audio.muted = false;
+        volumeSymbol.classList = "fa-solid fa-volume-high";
+        volumeState = "unmuted"
+    }
+})
+
 
 
 
